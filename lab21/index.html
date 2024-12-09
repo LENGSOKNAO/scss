@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input id="nu1" type="text" /> <br />
+      <input id="nu2" type="text" /> <br />
+      <input id="a" type="text" placeholder="- + * /" /> <br />
+      <span id="result"></span> <br />
+      <button id="btn" type="button">submit</button> <br />
+    </form>
+
+    <script>
+      const number = document.getElementById("nu1");
+      const number2 = document.getElementById("nu2");
+      const sy = document.getElementById("a");
+      const result = document.getElementById("result");
+      const btn = document.getElementById("btn");
+
+      btn.addEventListener("click", () => {
+        const value = Number(number.value);
+        const value2 = Number(number2.value);
+        const add = sy.value;
+        let last;
+
+        if (add === "+") {
+          last = value + value2;
+        } else if (add === "-") {
+          last = value - value2;
+        } else if (add === "/") {
+          last = value / value2;
+        } else if (add === "*") {
+          last = value * value2;
+        } else {
+          alert("Not the Number");
+        }
+
+        result.textContent = last;
+      });
+    </script>
+  </body>
+</html>
